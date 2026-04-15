@@ -1,0 +1,66 @@
+/* Importing the theme font */
+@import url('https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap');
+
+.about-section {
+    width: 100%;
+    /* Subtracting navbar height (approx 100px) or using 100vh for full screen */
+    height: 100vh; 
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;     /* Center vertically */
+    background: radial-gradient(white, rgb(255, 216, 223), rgb(252, 148, 252));
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.magic-text {
+    font-family: "Yusei Magic", sans-serif;
+    font-size: 80px; /* Bigger impact */
+    font-weight: bold;
+    text-transform: uppercase;
+    
+    /* Multi-color gradient: Shows several colors at once */
+    background: linear-gradient(
+        to right, 
+        #ff0000, #ff7f00, #ffff00, #00ff00, #00ffff, #0000ff, #8b00ff, #ff0000
+    );
+    
+    /* Make the background wide enough to animate through all colors */
+    background-size: 300% auto;
+    
+    /* Clipping and transparency */
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    
+    /* Smooth animation */
+    animation: rainbow-flow 3s linear infinite;
+    
+    /* Ensure long text doesn't break the screen on small devices */
+    padding: 0 20px;
+    word-wrap: break-word;
+}
+
+/* The animation loop */
+@keyframes rainbow-flow {
+    0% {
+        background-position: 0% center;
+    }
+    100% {
+        background-position: 300% center;
+    }
+}
+
+/* Tablet & Mobile tweaks */
+@media (max-width: 800px) {
+    .magic-text {
+        font-size: 50px;
+    }
+}
+
+@media (max-width: 480px) {
+    .magic-text {
+        font-size: 35px;
+    }
+}
